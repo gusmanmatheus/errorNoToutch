@@ -9,7 +9,7 @@ import dagger.Provides
 open class ListContactsVMModules {
     @Provides
     @PearActivity //Annotation creating per annotation Scope
-    fun provideListContactVm (string: String):ListContactsVM{
+    fun provideListContactVm(string: String): ListContactsVM {
         return ListContactsVM(string)
     }
 

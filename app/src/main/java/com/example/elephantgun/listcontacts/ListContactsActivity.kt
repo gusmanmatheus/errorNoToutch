@@ -10,21 +10,21 @@ import com.example.elephantgun.di.contract.DaggerApplicationComponet
 import com.example.elephantgun.di.modules.ListContactsVMModules
 
 class ListContactsActivity : AppCompatActivity() {
-    lateinit var viewModel:ListContactsVM
-    private   var listContactsVMModules =  object : ListContactsVMModules(){}
-    lateinit  var mVMComponent: ApplicationComponet
+    lateinit var viewModel: ListContactsVM
+    private var listContactsVMModules = object : ListContactsVMModules() {}
+    lateinit var mVMComponent: ApplicationComponet
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.list_contacts_main)
-         mVMComponent = DaggerApplicationComponet
+        mVMComponent = DaggerApplicationComponet
             .builder()
             .listContactsVMModules(listContactsVMModules)
             .build()
 
-        viewModel =  listContactsVMModules.provideListContactVm("ISSO WORKING")
-        Log.d("xrl8",viewModel.printa())
-        Log.i("xrl8",viewModel.printa())
+        viewModel = listContactsVMModules.provideListContactVm("ISSO WORKING")
+        Log.d("xrl8", viewModel.printa())
+        Log.i("xrl8", viewModel.printa())
 
     }
 }
